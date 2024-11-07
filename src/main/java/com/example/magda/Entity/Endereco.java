@@ -1,4 +1,6 @@
-package main.java.com.example.magda.Entity;
+package com.example.magda.Entity;
+
+
 
 import jakarta.persistence.*;
 
