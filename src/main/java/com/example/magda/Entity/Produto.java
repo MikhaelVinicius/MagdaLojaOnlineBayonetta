@@ -1,7 +1,7 @@
 package main.java.com.example.magda.Entity;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
