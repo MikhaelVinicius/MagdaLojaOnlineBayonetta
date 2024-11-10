@@ -4,7 +4,12 @@ package com.example.magda.Entity;
 
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Categoria {
@@ -16,9 +21,9 @@ public class Categoria {
     @Column(nullable = false)
     private String nome;
 
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
-    private List<Produto> produtos;
-
+    @OneToMany(mappedBy = "categoria")
+    @JsonManagedReference 
+    private List<Produto> produtos = new ArrayList<>();
  
     public Categoria() {}
 
@@ -50,4 +55,9 @@ public class Categoria {
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
     }
+
+    
+
+
+
 }
