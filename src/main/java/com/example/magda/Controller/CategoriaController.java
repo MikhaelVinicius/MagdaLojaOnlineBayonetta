@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.magda.Entity.Categoria;
+import com.example.magda.Entity.Produto;
+import com.example.magda.Repositorio.CategoriaRepository;
 import com.example.magda.Service.CategoriaService;
 
 import java.util.List;
@@ -39,4 +41,11 @@ public class CategoriaController {
         categoriaService.deletar(id);
         return ResponseEntity.noContent().build();
     }
+
+
+
+
+
+
+
 }

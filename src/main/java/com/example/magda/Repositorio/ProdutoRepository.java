@@ -21,6 +21,6 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
     List<Produto> findByQuantidadeEstoqueGreaterThan(int quantidade);
 
-  
+    List<Produto> findByCategoriaId(Long categoriaId);
 
 }

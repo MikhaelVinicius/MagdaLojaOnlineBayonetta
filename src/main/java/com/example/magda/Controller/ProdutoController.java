@@ -31,10 +31,19 @@ public class ProdutoController {
         return produto.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/produtos-categoria")
-    public List<Produto> buscarPorCategoria(@RequestParam Categoria categoria) {
-        return produtoService.listarPorCategoria(categoria);
+    @GetMapping("/categoria/{categoriaId}")
+    public ResponseEntity<List<Produto>> buscarProdutosPorCategoria(@PathVariable Long categoriaId) {
+        List<Produto> produtos = produtoService.buscarPorCategoria(categoriaId);
+        
+    
+        if (produtos.isEmpty()) {
+            return ResponseEntity.noContent().build();  
+        }
+        return ResponseEntity.ok(produtos);  
     }
+
+
+
 
     @GetMapping("/faixa-preco")
     public ResponseEntity<List<Produto>> listarPorFaixaDePreco(

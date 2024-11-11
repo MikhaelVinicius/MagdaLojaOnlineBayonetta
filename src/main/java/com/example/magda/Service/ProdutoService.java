@@ -22,6 +22,10 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
+    public List<Produto> buscarPorCategoria(Long categoriaId) {
+        return produtoRepository.findByCategoriaId(categoriaId);
+    }
+
     public List<Produto> listarPorCategoria(Categoria categoria){
         return produtoRepository.findProdutoByCategoria(categoria);
     }
